@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ticketing_sysyem.urls'
+ROOT_URLCONF = 'ticketing_system.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ticketing_sysyem.wsgi.application'
+WSGI_APPLICATION = 'ticketing_system.wsgi.application'
 
 
 # Database
@@ -134,3 +134,5 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = TIME_ZONE
 
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+
+PAYSTACK_WEBHOOK_SECRET = 'isuche939h220n-`=)EHJcsjcn9e3o3'

@@ -14,7 +14,7 @@ from .serializers import EventSerializer, TicketSerializer
 
 class EventListView(generics.ListAPIView):
     queryset = Event.objects.all()
-    serializer_calss = EventSerializer
+    serializer_class = EventSerializer
 
 
 @api_view(['POST'])

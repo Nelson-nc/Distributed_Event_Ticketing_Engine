@@ -3,7 +3,11 @@ from celery import Celery
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ticketing_system.settings')
 
-app = Celery('ticketing_system')
+app = Celery(
+    'ticketing_system',
+    broker='redis://localhost:6379/0',
+    backend='redis://localhost:6379/0'
+    )
 
 app.config_from_object('django.conf:settings', namespace='CELERY')
 
