@@ -36,3 +36,10 @@ function decorated by it or context, if one should fail all fails. just to be sa
     - the set it to automatically discover the CELERY settings
 
 - CELERY_BROKEN_URL & CELERY_RESULT_BACKEND: our redis db
+
+<br>
+
+## Payment (Fake)
+it's basically just me creating an __hmac__ from the body and passing it as a header (__X-Paystack-Signature__) compare it and update the ticket status to 'CONFIRMED' if they match.
+
+**Note**: but of cause in a real application no one would know it is created from the body 

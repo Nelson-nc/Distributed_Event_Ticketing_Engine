@@ -135,4 +135,4 @@ CELERY_TIMEZONE = TIME_ZONE
 
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
-PAYSTACK_WEBHOOK_SECRET = 'isuche939h220n-`=)EHJcsjcn9e3o3'
+PAYSTACK_WEBHOOK_SECRET = 'sk_test_mock_secret_key_12345'
