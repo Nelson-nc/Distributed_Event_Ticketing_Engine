@@ -3,7 +3,22 @@ An Event Ticketing system for handling selling tickets for an Event with Queuein
 ticket, and database atomicity effeciently handle database queries.
 
 ## Features
-for futher detail check out the [Overview](overview.md)
+- **instant Ticket Reservation**: when a user reserver's a ticket they don't immediately pay. 
+The system temporarily locks a ticket for them and give them a **5-minute countdown timer** to complete their payment.
+
+- **Secure Payment Verification**: it uses a mock payment(similar to PayStack) using secure cryptographic signature.
+
+- **Automated Clean-up**: if the user fails to pay within 5-minute of reserving a ticket their resrvation is completely
+wiped out, and the ticket is handed back to the pool.
+
+## Problems fixed
+- Double-Booking: if there is only 5 ticket remaining and 10 people wants it at the same time it might oversell but because
+the system locks row during transactions we can prevent this from happening
+
+- Server Bottlenecks & crashes: this is prevented due to the asynchronous manner of the program.
+
+- Ticket hoarding: prevent bots or user from ruining sale by hoarding many tickets.
+
 
 ## Tech Stack 
 - python

@@ -43,3 +43,13 @@ function decorated by it or context, if one should fail all fails. just to be sa
 it's basically just me creating an __hmac__ from the body and passing it as a header (__X-Paystack-Signature__) compare it and update the ticket status to 'CONFIRMED' if they match.
 
 **Note**: but of cause in a real application no one would know it is created from the body 
+
+<br>
+<br>
+<br>
+
+- Django and rest framework: handles api routing, logic, and requests.
+- sqlite: is the database for storing events, user, payed tickets
+- redis: a bridge btw django and celery
+- celery worker: the background task executor that runs independently of the main django server.
+- celery beat: the built-in schedular for celery
