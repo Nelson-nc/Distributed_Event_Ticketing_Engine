@@ -79,20 +79,21 @@ python manage.py runserver
 celery -A ticketing_system worker
 celery -A ticketing_system beat
 ```
-`run this two command on two different terminal one for each 
+```
+run this two command on two different terminal one for each 
 or run them both as a background task
 
 additionally to see its logs add '--loglevel=info' at the end of those two command and maybe redirect
 the output to a file.
-`
+```
 8. celery with django
-`
+```
 open 'http://127.0.0.1:8000/admin/' in your browser and login as superuser
 while there locate **Celery Beat** and click **Periodic Tasks** and create a new one
 # "name": "Clean Reservation every minute"
 # "task": tickets.tasks.clean_expired_reservation
 # "interval": 1 minute
-`
+```
 
 
 ## Contributing
