@@ -53,3 +53,7 @@ it's basically just me creating an __hmac__ from the body and passing it as a he
 - redis: a bridge btw django and celery
 - celery worker: the background task executor that runs independently of the main django server.
 - celery beat: the built-in schedular for celery
+
+
+celery -A \<project_name> worker
+celery -A \<project_name> beat

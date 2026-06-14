@@ -74,9 +74,28 @@ python manage.py createsuperuser
 ```sh
 python manage.py runserver
 ```
-## Contributing
-contributions are a great thing, maybe you found a bug, something you feel needs to be changed or maybe it's just as an hobby your contributions are highly welcomed so feel free to contribute.
+7. celery worker & beat
+```sh
+celery -A ticketing_system worker
+celery -A ticketing_system beat
+```
+`run this two command on two different terminal one for each 
+or run them both as a background task
 
+additionally to see its logs add '--loglevel=info' at the end of those two command and maybe redirect
+the output to a file.
+`
+8. celery with django
+`
+open 'http://127.0.0.1:8000/admin/' in your browser and login as superuser
+while there locate **Celery Beat** and click **Periodic Tasks** and create a new one
+# "name": "Clean Reservation every minute"
+# "task": tickets.tasks.clean_expired_reservation
+# "interval": 1 minute
+`
+
+
+## Contributing
 1. Fork this project repository
 2. Create your **Feature branch**
 ```sh
